@@ -1,0 +1,8 @@
+stages:
+  data_cleaning:
+    cmd: python src/data/data_cleaning.py --force
+    deps:
+    - data/raw/raw_data.csv
+    - src/data/data_cleaning.py
+    outs:
+    - data/cleaned/cleaned_data.csv

@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  data_cleaning:
+    cmd: python src/data/data_cleaning.py --force
+    deps:
+    - path: data/raw/raw_data.csv
+      hash: md5
+      md5: 0979d6945498da4527076682b8b2b38b
+      size: 21299266
+    - path: src/data/data_cleaning.py
+      hash: md5
+      md5: 0b9423a8c193ec50ee4d7a50eefefb65
+      size: 7792
+    outs:
+    - path: data/cleaned/cleaned_data.csv
+      hash: md5
+      md5: e9f376e2e5278f0f4f73c5c49a93c1b0
+      size: 1071008
