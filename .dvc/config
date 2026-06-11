@@ -1,4 +1,7 @@
 [core]
     remote = gdrive_remote
+    hardlink_lock = true
 ['remote "gdrive_remote"']
     url = gdrive://1Ho5xBclpd_JB7c9jHL_XJ3YolUVU199u
+    gdrive_client_id = 389063445038-vmu3rttr95lg4kb5a6qna8f6cvjajpna.apps.googleusercontent.com
+    gdrive_client_secret = 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
