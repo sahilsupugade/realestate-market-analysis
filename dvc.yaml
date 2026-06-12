@@ -6,3 +6,10 @@ stages:
     - src/data/data_cleaning.py
     outs:
     - data/cleaned/cleaned_data.csv
+  preprocessing:
+    cmd: python src/features/preprocessing.py
+    deps:
+    - data/cleaned/cleaned_data.csv
+    - src/features/preprocessing.py
+    outs:
+    - data/processed/preprocessed_data.csv

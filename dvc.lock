@@ -9,10 +9,26 @@ stages:
       size: 21299266
     - path: src/data/data_cleaning.py
       hash: md5
-      md5: 0b9423a8c193ec50ee4d7a50eefefb65
-      size: 7792
+      md5: 7e103c13fb573f554a385f5364be75ee
+      size: 8045
     outs:
     - path: data/cleaned/cleaned_data.csv
       hash: md5
-      md5: e9f376e2e5278f0f4f73c5c49a93c1b0
-      size: 1071008
+      md5: 73ff250d6c39dd89fd7b720e9ce8aea7
+      size: 1169701
+  preprocessing:
+    cmd: python src/features/preprocessing.py
+    deps:
+    - path: data/cleaned/cleaned_data.csv
+      hash: md5
+      md5: 73ff250d6c39dd89fd7b720e9ce8aea7
+      size: 1169701
+    - path: src/features/preprocessing.py
+      hash: md5
+      md5: b717ca4e79e0163715fc63363fc9fcfe
+      size: 3814
+    outs:
+    - path: data/processed/preprocessed_data.csv
+      hash: md5
+      md5: 3f09d9499cfab876266bffebb470394f
+      size: 928319

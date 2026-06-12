@@ -201,6 +201,12 @@ def transform_data(df:pd.DataFrame) -> pd.DataFrame:
 
     df['others'] = df['others'].apply(roomslist)
 
+    #OHE for 'others' column
+    unique = set(i for sublist in df['others'] if isinstance(sublist,list) for i in sublist )
+
+    for room in unique:
+        df[room] = df['others'].apply(lambda x: int(room in x if isinstance(x, list) else False))
+
     df['luxury_score'] = df['features_list'].apply(feature_map)
 
     df['features'] = df['features'].apply(ensure_list)
